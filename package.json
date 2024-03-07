@@ -1,0 +1,14 @@
+{
+  "name": "gym-pass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "20.11.25",
+    "tsx": "4.7.1",
+    "typescript": "5.4.2"
+  }
+}

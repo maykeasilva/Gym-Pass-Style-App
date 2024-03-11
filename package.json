@@ -9,6 +9,11 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "5.10.2",
+    "dotenv": "16.4.5",
+    "zod": "3.22.4"
+  },
   "devDependencies": {
     "@rocketseat/eslint-config": "2.2.2",
     "@types/node": "20.11.25",
@@ -16,8 +21,5 @@
     "prisma": "5.10.2",
     "tsx": "4.7.1",
     "typescript": "5.4.2"
-  },
-  "dependencies": {
-    "@prisma/client": "5.10.2"
   }
 }

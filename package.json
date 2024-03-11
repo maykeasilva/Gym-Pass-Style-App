@@ -3,14 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "migrate": "prisma migrate dev",
+    "studio": "prisma studio"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@rocketseat/eslint-config": "2.2.2",
     "@types/node": "20.11.25",
     "eslint": "8.57.0",
+    "prisma": "5.10.2",
     "tsx": "4.7.1",
     "typescript": "5.4.2"
+  },
+  "dependencies": {
+    "@prisma/client": "5.10.2"
   }
 }

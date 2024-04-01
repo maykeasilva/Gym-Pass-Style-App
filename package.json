@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:dev": "tsx watch ./src/http/server.ts",
     "test": "vitest run --dir ./src/use-cases",
     "test:watch": "vitest --dir ./src/use-cases",
     "migrate": "prisma migrate dev",
@@ -16,6 +17,7 @@
     "bcryptjs": "2.4.3",
     "dayjs": "1.11.10",
     "dotenv": "16.4.5",
+    "fastify": "4.26.2",
     "zod": "3.22.4"
   },
   "devDependencies": {

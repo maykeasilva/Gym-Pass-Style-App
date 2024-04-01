@@ -42,7 +42,7 @@ export class InMemoryGymsRepository implements GymsRepository {
 
   async searchMany(query: string, page: number) {
     const gyms = this.database
-      .filter((item) => item.name.includes(query))
+      .filter((item) => item.name.toLowerCase().includes(query.toLowerCase()))
       .slice((page - 1) * 20, page * 20)
 
     return gyms

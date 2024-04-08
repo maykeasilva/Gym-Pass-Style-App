@@ -31,6 +31,7 @@ export class PrismaGymsRepository implements GymsRepository {
       where: {
         name: {
           contains: query.toLowerCase(),
+          mode: 'insensitive',
         },
       },
       take: itemsPerPage,

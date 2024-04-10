@@ -4,11 +4,11 @@ import { ResourceNotFoundError } from '@/use-cases/errors/resource-not-found-err
 import { LateCheckInValidationError } from '@/use-cases/errors/late-check-in-validation-error'
 import { makeValidateCheckInUseCase } from '@/use-cases/factories/make-validate-check-in-use-case'
 
-export async function validate(request: FastifyRequest, reply: FastifyReply) {
-  const validateCheckInParamsSchema = z.object({
-    checkInId: z.string().uuid(),
-  })
+export const validateCheckInParamsSchema = z.object({
+  checkInId: z.string().uuid(),
+})
 
+export async function validate(request: FastifyRequest, reply: FastifyReply) {
   const { checkInId } = validateCheckInParamsSchema.parse(request.params)
 
   try {

@@ -5,11 +5,11 @@ import { createAndAuthenticateAdmin } from '@/utils/tests/create-and-authenticat
 
 describe('Create Gym (e2e)', () => {
   beforeAll(async () => {
-    app.ready()
+    await app.ready()
   })
 
   afterAll(async () => {
-    app.close()
+    await app.close()
   })
 
   it('should be able to create gym', async () => {

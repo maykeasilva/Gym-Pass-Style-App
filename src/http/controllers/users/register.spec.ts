@@ -4,11 +4,11 @@ import { app } from '@/http/app'
 
 describe('Register (e2e)', () => {
   beforeAll(async () => {
-    app.ready()
+    await app.ready()
   })
 
   afterAll(async () => {
-    app.close()
+    await app.close()
   })
 
   it('should be able to register', async () => {

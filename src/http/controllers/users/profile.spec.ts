@@ -5,11 +5,11 @@ import { createAndAuthenticateUser } from '@/utils/tests/create-and-authenticate
 
 describe('Get User Profile (e2e)', () => {
   beforeAll(async () => {
-    app.ready()
+    await app.ready()
   })
 
   afterAll(async () => {
-    app.close()
+    await app.close()
   })
 
   it('should be able to get user profile', async () => {

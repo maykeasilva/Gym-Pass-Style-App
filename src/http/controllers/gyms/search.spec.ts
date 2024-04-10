@@ -6,11 +6,11 @@ import { createAndAuthenticateUser } from '@/utils/tests/create-and-authenticate
 
 describe('Search Gyms (e2e)', () => {
   beforeAll(async () => {
-    app.ready()
+    await app.ready()
   })
 
   afterAll(async () => {
-    app.close()
+    await app.close()
   })
 
   it('should be able to search gyms', async () => {

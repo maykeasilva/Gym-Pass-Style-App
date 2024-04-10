@@ -6,11 +6,11 @@ import { createAndAuthenticateUser } from '@/utils/tests/create-and-authenticate
 
 describe('Create Check-in (e2e)', () => {
   beforeAll(async () => {
-    app.ready()
+    await app.ready()
   })
 
   afterAll(async () => {
-    app.close()
+    await app.close()
   })
 
   it('should be able to create check-in', async () => {

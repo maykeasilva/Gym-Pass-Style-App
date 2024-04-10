@@ -1,7 +1,6 @@
-version: '3.8'
-
 services:
   postgres:
+    container_name: gym_pass
     image: bitnami/postgresql:latest
     ports:
       - 5432:5432
@@ -14,3 +13,4 @@ services:
 
 volumes:
   postgres_data:
+    name: gym_pass_data

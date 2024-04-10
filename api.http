@@ -1,0 +1,65 @@
+### Rota para criar um novo usuário
+POST http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "password": "123456"
+}
+
+### Rota para autenticar um usuário - Retorna o token necessário para realizar outras operações
+POST http://localhost:3333/sessions
+Content-Type: application/json
+
+{
+  "email": "johndoe@example.com",
+  "password": "123456"
+}
+
+### Rota para obter informações do perfil do usuário - Requer autenticação
+GET http://localhost:3333/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+### Rota para criar uma nova academia - Requer autenticação e permissão de administrador
+POST http://localhost:3333/gyms
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+{
+  "name": "Alpha Gym",
+  "description": "Description of the gym",
+  "phone": "32999110011",
+  "latitude": -20.9145873,
+  "longitude": -44.0732596
+}
+
+### Rota para pesquisar academias - Requer autenticação
+GET http://localhost:3333/gyms/search?query=alpha
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+### Rota para procurar academias próximas - Requer autenticação
+GET http://localhost:3333/gyms/nearby?latitude=-20.9205444&longitude=-44.0712663
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+### Rita para criar um novo check-in - Requer autenticação
+POST http://localhost:3333/gyms/4f2f66e6-52a9-4860-86ca-1f772e237738/check-ins
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+{
+  "latitude": -20.9145873,
+  "longitude": -44.0732596
+}
+
+### Rota para validar um check-in - Requer autenticação e permissão de administrador
+PATCH http://localhost:3333/check-ins/4b29c689-1cc5-48d4-b725-682e0d1c0c2c/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+### Rota para obter o histórico de check-ins do usuário - Requer autenticação
+GET http://localhost:3333/check-ins/history
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
+
+### Rota para obter a contagem de check-ins do usuário - Requer autenticação
+GET http://localhost:3333/check-ins/metrics
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwYjhjZDQ0YS1kOGM1LTQyMjMtOWRjZC0zMDU1OWIwZDdiYzgiLCJpYXQiOjE3MTI2MjMzODR9.vDFUZyr29fLF7b-JDRe5mrvBa1jDa5BdrK-kogEeUMU
